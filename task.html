@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Task</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+
+    <script type="text/javascript" charset="utf-8" async defer>
+        function load() {
+            fetchtask();
+            fetchdoc(null,null); 
+        }
+    </script>
+<style type="text/css" media="screen">
+    .error{
+        color: red;
+    }   
+    /* Hiding the checkbox, but allowing it to be focused */
+.badgebox
+{
+    opacity: 0;
+}
+.badge{
+    background-color: #151d1d2e;
+}
+.badgebox + .badge
+{
+    /* Move the check mark away when unchecked */
+    text-indent: -999999px;
+    /* Makes the badge's width stay the same checked and unchecked */
+    width: 27px;
+}
+
+.badgebox:focus + .badge
+{
+    /* Adding a light border */
+    box-shadow: inset 0px 0px 5px;
+    /* Taking the difference out of the padding */
+}
+
+.badgebox:checked + .badge
+{
+    /* Move the check mark back when checked */
+    text-indent: 0;
+} 
+</style>
+</head>
+
+<body class="animsition" onload="load();">
+    <div class="page-wrapper">
+      <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-tachometer-alt"></i>Home</a>
+                        
+                        </li>
+                        <li>
+                            <a href="document.html">
+                                <i class="fas fa-chart-bar"></i>Document</a>
+                        </li>
+                        <li>
+                            <a href="branch.html">
+                                <i class="far fa-check-square"></i>Branch</a>
+                        </li>
+                        <li>
+                            <a href="employee.html">
+                                <i class="fas fa-calendar-alt"></i>Employee</a>
+                        </li>
+                        <li class="active">
+                            <a href="task.html">
+                                <i class="fas fa-map-marker-alt"></i>Task</a>
+                        </li>
+                         <li>
+                            <a href="expence.html">
+                                <i class="fas fa-map-marker-alt"></i>Expences</a>
+                        </li>
+                         <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>UI Element</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class=" has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Home</a>
+                        </li>
+                       <li>
+                            <a href="document.html">
+                                <i class="fas fa-chart-bar"></i>Document</a>
+                        </li>
+                        <li class="">
+                            <a href="branch.html">
+                                <i class="far fa-check-square"></i>Branch</a>
+                        </li>
+                        <li>
+                            <a href="employee.html">
+                                <i class="fas fa-calendar-alt"></i>Employees</a>
+                        </li>
+                        <li class="active">
+                            <a href="task.html">
+                                <i class="fas fa-map-marker-alt"></i>Task</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="expence.html">
+                                <i class="fas fa-copy"></i>Expences</a>
+                            
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                              <i class="fas fa-desktop"></i>UI Element</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+
+<!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+          <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <form class="form-header" action="" method="POST">
+                            <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                            <button class="au-btn--submit" type="submit">
+                                <i class="zmdi zmdi-search"></i>
+                            </button>
+                        </form>
+                       
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+                                    <div class="image">
+                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                    </div>
+                                    <div class="content">
+                                        <a class="js-acc-btn" href="#">john doe</a>
+                                    </div>
+                                    <div class="account-dropdown js-dropdown">
+                                        <div class="info clearfix">
+                                            <div class="image">
+                                                <a href="#">
+                                                    <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="name">
+                                                    <a href="#">john doe</a>
+                                                </h5>
+                                                <span class="email">johndoe@example.com</span>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__body">
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-account"></i>Account</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-settings"></i>Setting</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__footer">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-power"></i>Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+          </header>
+
+        <!-- HEADER DESKTOP-->
+        
+        <!-- MAIN CONTENT-->
+                <div class="main-content">
+                    <div class="section__content section__content--p30">
+                        <div class="container-fluid">
+                            <div class="row" >
+                                <div class="col-md-9 alertmsg" style="display:none;">
+                                    <div class="sufee-alert alert with-close alert-info alert-dismissible fade show">
+                                        <span class="badge badge-pill badge-secondary">Success</span>
+                                        You have successfully performed.
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                 </div>
+                            
+                                  <div class="col-lg-3 ml-auto" style="padding:12px;text-align: right;">
+                                    <div class="card-body">
+                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#largeModal">
+                                    <i class="zmdi zmdi-plus"></i>Add Task</button>
+                                    </div>
+                                 </div>
+                                
+                            </div>
+                            <div class="row">
+          
+                             <div class="col-lg-12 table-responsive">
+                                    <div class=" table--no-card m-b-30">
+                                        <table class="table table-borderless table-striped table-earning">
+                                            <thead style="text-align: center;">
+                                                <tr>
+                                                    <th>Task Name</th>
+                                                    <th>Processing Days</th>
+                                                    <th>Cost</th>
+                                                    <th>Documents</th>
+                                                    <th class="text-center">Action</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody class="tasktab" style="text-align: center;">
+                                 
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+             </div>
+    </div>
+    <!-- modal delete popup -->
+            <div class="modal fade" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true"
+             >
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticModalLabel">Delete Task</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Are you sure you want delete this entry ..???
+                            </p>
+                        </div>
+                        <input type="hidden" name="" class="dlt" >
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" onclick="deletetask();">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end modal deletepopup -->
+
+       <!-- modal for view document -->
+
+          <div class="modal fade" id="viewdocmodal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title viewdoclabel" id="staticModalLabel"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                           <div class="row viewdocdiv">
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end modal deletepopup -->
+       
+
+<!-- MODDEL FOR ADD BRANCH -->    
+      <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="largeModalLabel"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                           <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center title-2">Task Register</h3>
+                                        </div>
+                                        <hr>
+                                        <form id="formRegist" name="registration">
+                                            
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for="cc-exp" class="control-label mb-1">Task Name *</label>
+                                                        <input id="task" name="task" type="text" class="form-control cc-exp" value="" data-val="true" placeholder="Please enter task name"
+                                                            autocomplete="cc-exp">
+                                                        <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                </div>
+                    
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for="x_card_code" class="control-label mb-1">Process Days*</label>
+                                                        <div class="form-group">
+                                                            <input id="pday" name="pday" type="number" class="form-control cc-cvc" value="" data-val="true" placeholder="Please enter process days" autocomplete="off">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for="cc-exp" class="control-label mb-1">Cost*</label>
+                                                        <input id="cost" name="cost" type="number" class="form-control cc-exp" value="" data-val="true" placeholder="Please enter place" 
+                                                            autocomplete="cc-exp">
+                                                        <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                </div>
+                                            </div>       
+
+                                           <div class="row">
+                                               <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="cc-exp" class="control-label mb-1 doclabel">Documents*</label>
+                                                        <div class="">
+                                                             <!-- <div class="col-md-6"> -->
+                                                              <div class="form-group">
+                                                                <div class="row docs">
+                                                                
+
+                                                                </div>
+                                                                <span id="errorToShow"></span> 
+                                                            </div>
+                                                            <!-- </div> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                           </div>
+
+                                            <div>
+                                                <button id="reg" type="submit" class="btn btn-lg btn-info btn-block">
+                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                                    <span id="payment-button-amount">Save</span>
+                                                    <span id="regv" style="display:none;">Registering</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>    
+
+<!-- MODDEL FOR EDIT BRANCH -->
+
+         <div class="modal fade" id="largeModalEdit" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="largeModalLabel"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                           <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center title-2">Task Edit</h3>
+                                        </div>
+                                        <hr>
+                                        <form id="formEdit" name="editingform">                                                                                       
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for="cc-exp" class="control-label mb-1">Task Name *</label>
+                                                        <input id="model_task" name="task" type="text" class="form-control cc-exp" value="" data-val="true" placeholder="Please enter task name"
+                                                            autocomplete="cc-exp">
+                                                        <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                </div>
+                    
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for="x_card_code" class="control-label mb-1">Process Days*</label>
+                                                        <div class="form-group">
+                                                            <input id="model_pday" name="pday" type="number" class="form-control cc-cvc" value="" data-val="true" placeholder="Please enter process days" autocomplete="off">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for="cc-exp" class="control-label mb-1">Cost*</label>
+                                                        <input id="model_cost" name="cost" type="number" class="form-control cc-exp" value="" data-val="true" placeholder="Please enter place" 
+                                                            autocomplete="cc-exp">
+                                                        <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                           <div class="row">
+                                               <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="cc-exp" class="control-label mb-1 doclabel">Documents*</label>
+                                                        <div class="">
+                                                             <!-- <div class="col-md-6"> -->
+                                                              <div class="form-group">
+                                                                <div class="row docs">
+                                                                
+
+                                                                </div>
+                                                                <span id="errorToShowEdit"></span> 
+                                                            </div>
+                                                            <!-- </div> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                           </div>
+                                           <input type="hidden" name="task_id" class="task_id_upd" value="">
+                                            <div>
+                                                <button id="reg" type="submit" class="btn btn-lg btn-info btn-block">
+                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                                    <span id="payment-button-amount">Update</span>
+                                                    <span id="regv" style="display:none;">Updating</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+    <!-- Jquery JS-->
+<script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+<script src="vendor/select2/select2.min.js">
+
+    </script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+
+
+ <script type="text/javascript" charset="utf-8" async defer>
+
+
+//METHODE FOR FETCHING TASK DOCUMENTS AND ALL DOCUMENTS, AS ID=NULL AND ANOTHOR FETCH HAS ID=TASKID
+
+    function fetchdoc(id,edit) {
+        if(edit != null){
+              var arr=[];
+                $.getJSON('http://192.168.1.63:4700/view_task_doc?task_id='+id, function (data) {
+                     for (var i = 0; i < data.length; i++) {   
+                        arr.push(data[i].document_id);
+                    }
+                        $('.checks').prop("checked", true);
+                        $(".checkbox").find('[value=' + arr.join('], [value=') + ']').prop("checked", true);
+                });
+                
+        }else if(id == null){
+            var htmcnt='';
+                $.getJSON('http://192.168.1.63:4700/view_document', function (data) {
+                    
+                    for (var i = 0; i < data.length; i++) {
+                        htmcnt=htmcnt+'<div class="col-md-4"><label class="btn btn-sm btn-warning checkbox">'+data[i].document_name+' <input type="checkbox" class="badgebox" name="docid" value="'+data[i].document_id+'"><span class="badge">&check;</span></label></div>';                                         
+                             }
+                   $('.docs').html(htmcnt)
+            });
+           }else{
+            var htmcnt='';
+                $.getJSON('http://192.168.1.63:4700/view_task_doc?task_id='+id, function (data) {
+                    var task='';
+                    for (var i = 0; i < data.length; i++) {
+                          htmcnt=htmcnt+'<div class="col-md-6"><label class="btn btn-sm btn-warning ">'+data[i].document_name+' <input type="checkbox" class="badgebox" name="docid" value="'+data[i].document_id+'" checked disabled><span class="badge">&check;</span></label></div>'; 
+                    }
+                    task=data[0].task;
+                   $('.viewdocdiv').html(htmcnt)
+                   $('.viewdoclabel').html("Documents Required For "+task)
+
+                   $('#viewdocmodal').modal('show') 
+            });
+           }   
+    } 
+
+//  FUNJCTION FOR TASK VALIDATION AND REGISTRATION
+
+    $(function() {
+        
+      // Initialize form validation on the registration form.
+      $("form[name='registration']").validate({
+        // Specify validation rules
+        rules: {
+          // on the right side
+          task: "required",
+          pday: "required",
+          cost: "required",
+          docid: "required",
+        },
+        // Specify validation error messages
+        messages: {
+          task: "Please enter task name",
+          pday: "Please enter process days",
+          cost: "Please enter cost",
+          docid: "Please check one",
+        },
+        // unhighlight: function (element) {
+        //      $("select").removeClass("error");
+        //      $("input").removeClass("error");
+        // },
+         errorPlacement: function(error, element) {
+                    if (element.attr("name") == "docid") {
+                        error.appendTo("#errorToShow");
+                    } else {
+                        error.insertAfter(element);
+                    }
+        },
+        // Make sure the form is submitted to the destination defined
+        // in the "action" attribute of the form when valid
+        submitHandler: function(form) {
+                var task = $("#task").val();
+                var pday = $("#pday").val();
+                var cost = $("#cost").val();
+                var favorite = [];               
+                $.each($("input[name='docid']:checked"), function(){            
+                    favorite.push($(this).val());
+                });
+                var str=favorite.toString();
+            console.log(str)
+            alert(str+task+pday+cost)
+                    $.getJSON('http://192.168.1.63:4700/task_reg', {
+                        task: task,
+                        pday: pday,
+                        cost: cost,
+                        docid: str,
+                    }, function (data) {
+                        $('.alertmsg').css('display','block')  
+                        // alert box hide after 2 seconds
+                        $('.alertmsg').delay(2000).fadeOut();
+                        fetchtask();
+                      $('#largeModal').modal('hide')  
+                });
+            
+            }
+          });
+   });
+
+//  FUNJCTION FOR TASK VALIDATION AND UPDATION
+
+    $(function() {
+      // Initialize form validation on the registration form.
+      $("form[name='editingform']").validate({
+        // Specify validation rules
+        rules: {
+          // on the right side
+          task: "required",
+          pday: "required",
+          cost: "required",
+          docid: "required",
+        },
+        // Specify validation error messages
+        messages: {
+          task: "Please enter task name",
+          pday: "Please enter process days",
+          cost: "Please enter cost",
+          docid: "Please select one",
+        },
+        unhighlight: function (element) {
+             $("select").removeClass("error");
+             $("input").removeClass("error");
+         },
+        errorPlacement: function(error, element) {
+                    if (element.attr("name") == "docid") {
+                        error.appendTo("#errorToShowEdit");
+                    } else {
+                        error.insertAfter(element);
+                    }
+        },
+        // Make sure the form is submitted to the destination defined
+        // in the "action" attribute of the form when valid
+        submitHandler: function(form) {
+                    var task = $("#model_task").val();
+                    var pday = $("#model_pday").val();
+                    var cost = $("#model_cost").val();
+                    var favorite = [];               
+                    $.each($("#formEdit input[name='docid']:checked"), function(){            
+                        favorite.push($(this).val());
+                    });
+                    var str=favorite.toString();
+                    alert(str)
+                $.getJSON('http://192.168.1.63:4700/updatetask', {
+                           task_id: $('.task_id_upd').val(),
+                           task: task,
+                           processday: pday,
+                           cost: cost,
+                           docid:str,
+                        }, function (data) {
+                            $('.alertmsg').css('display','block')  
+                                      // alert box hide after 2 seconds
+                            $('.alertmsg').delay(2000).fadeOut();
+                            $("#formRegist")[0].reset();
+                            fetchtask();
+                              $('#largeModalEdit').modal('hide')  
+                            
+           
+                    });
+                }
+              });
+    });
+
+// CLEAR MODEL ITEMS WHEN HIDING THE MODAL
+
+    $('#largeModalEdit').on('hidden.bs.modal', function () {
+        $("#formEdit")[0].reset();
+        $("#formRegist")[0].reset();
+        $(this).find("input").removeClass('error')
+        $("label[class='error']").css('display','none')
+    });
+
+    $('#largeModal').on('hidden.bs.modal', function () {
+        $("#formRegist")[0].reset();
+         $("#formEdit")[0].reset();
+        // $(this).find("input").val('').end();
+        $(this).find("input").removeClass('error')
+        $("label[class='error']").css('display','none')
+        // $('input[type=checkbox]').prop('checked',false);
+    });
+
+// FUNCTION FOR TASK VIEW
+
+    function fetchtask() {
+        var htmcnt='';
+            $.getJSON('http://192.168.1.63:4700/view_task', function (data) {
+                for (var i = 0; i < data.length; i++) {
+                     htmcnt=htmcnt+'<tr><td>'+data[i].task+'</td>'+
+                     '<td>'+data[i].processdays+'</td>'+
+                     '<td>'+data[i].cost+'</td>'+
+                     '<td><button class="fa fa-eye" style="font-size:28px;color:#3d3d40" onclick="fetchdoc('+data[i].task_id+',null)"></button></td>'+
+                     '<td style="text-align: center;"><button type="" class="btn btn-primary"  onclick="edittask('+data[i].task_id+');">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger dltBtn" data-id='+data[i].task_id+'>Delete</button></td></tr>';
+
+                }
+               $('.tasktab').html(htmcnt)
+        
+           });   
+    } 
+
+// FUNCTION FOR TASK DELETE POPUP OPEN
+
+ $(document).on('click','.dltBtn',function(){
+
+    var id=$(this).data('id');
+    $('.dlt').val(id);
+   $('#staticModal').modal('show');
+
+ }); 
+
+// FUNCTION FOR TASK DELETE FROM TABLE
+
+   function deletetask() {
+       var id= $('.dlt').val();
+            $.ajax({
+                  url: "http://192.168.1.63:4700/delete_task?task_id="+id,
+                  type: 'GET',
+                })
+                .done(function(data) {
+                  $('.alertmsg').css('display','block')  
+                          // alert box hide after 2 seconds
+                  $('.alertmsg').delay(2000).fadeOut();
+                  $('#staticModal').modal('hide');
+                  fetchtask();
+                })
+                .fail(function(data) {
+                  console.log("error");
+                });    
+    }
+
+// FUNCTION FOR TASK EDIT DATA SETTING ON MODAL POPUP
+
+    function edittask(id) {
+            $.ajax({
+                  url: "http://192.168.1.63:4700/edit_task?task_id="+id,
+                  type: 'GET',
+                  dataType: 'json',
+                })
+                .done(function(data) {
+                    console.log(data)
+                  $('#model_task').val(data.task)
+                  $('#model_cost').val(data.expected_cost)
+                  $('#model_pday').val(data.processdays);
+                  $('.task_id_upd').val(id);
+
+                  fetchdoc(data.task_id,'edit')
+                })
+                .fail(function() {
+                  console.log("error");
+                });
+                
+                $('#largeModalEdit').modal('show')
+    }
+
+</script>
+</body>
+
+</html>
+<!-- end document-->
